@@ -6,12 +6,18 @@
 
 This package provides a Nova Tool to manage redirects with [spatie/laravel-missing-page-redirector](https://github.com/spatie/laravel-missing-page-redirector).
 
+## Requirements
+
+* PHP >= 7.2
+* Laravel Nova >= 2.0
+* Laravel Framework >= 5.8
+
 ## Installation
 
 You can install the package via composer:
 
 ```sh
-composer require novius/laravel-nova-redirects-manager
+composer require novius/laravel-nova-redirect-manager
 ```
 
 The package will automatically register itself.
