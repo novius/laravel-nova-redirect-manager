@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=7.2.0",
-        "spatie/laravel-missing-page-redirector": "^2.5"
+        "spatie/laravel-missing-page-redirector": "^2.4|^2.5"
     },
     "require-dev": {
       "friendsofphp/php-cs-fixer": "~2.16.1"
