@@ -10,7 +10,7 @@ This package provides a Nova Tool to manage redirects with [spatie/laravel-missi
 
 * PHP >= 7.2
 * Laravel Nova >= 2.0
-* Laravel Framework >= 5.8
+* Laravel Framework >= 5.7
 
 ## Installation
 
