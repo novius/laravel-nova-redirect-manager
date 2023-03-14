@@ -6,6 +6,7 @@ use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Menu\MenuSection;
 use Novius\LaravelNovaRedirectManager\Rules\UrlAbsoluteOrRelative;
 use Novius\LaravelNovaRedirectManager\Rules\UrlRelative;
 
@@ -30,7 +31,7 @@ class Redirect extends Resource
      *
      * @var bool
      */
-    public static $displayInNavigation = false;
+    public static $displayInNavigation = true;
 
     /**
      * The columns that should be searched.
@@ -93,5 +94,11 @@ class Redirect extends Resource
     protected function maxLengthUrl(): int
     {
         return (int) config('missing-page-redirector.redirect_url_max_length', 1000);
+    }
+
+    public function menu(Request $request)
+    {
+        return MenuSection::resource(static::class)
+            ->icon('switch-horizontal');
     }
 }
