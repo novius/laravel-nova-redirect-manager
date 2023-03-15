@@ -95,10 +95,4 @@ class Redirect extends Resource
     {
         return (int) config('missing-page-redirector.redirect_url_max_length', 1000);
     }
-
-    public function menu(Request $request)
-    {
-        return MenuSection::resource(static::class)
-            ->icon('switch-horizontal');
-    }
 }
