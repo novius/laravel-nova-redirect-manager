@@ -6,7 +6,6 @@ use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
-use Laravel\Nova\Menu\MenuSection;
 use Novius\LaravelNovaRedirectManager\Rules\UrlAbsoluteOrRelative;
 use Novius\LaravelNovaRedirectManager\Rules\UrlRelative;
 
