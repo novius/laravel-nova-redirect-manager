@@ -15,7 +15,8 @@
       }
     ],
     "require": {
-        "php": ">=7.2.0",
+        "php": ">=7.3.0",
+        "laravel/nova": "~4.0",
         "spatie/laravel-missing-page-redirector": "^2.4|^2.5"
     },
     "require-dev": {
@@ -34,6 +35,12 @@
             ]
         }
     },
+    "repositories": [
+      {
+        "type": "composer",
+        "url": "https://nova.laravel.com"
+      }
+    ],
     "scripts": {
       "lint": [
         "php-cs-fixer fix --config .php_cs -vv --diff --allow-risky=yes --dry-run"

@@ -8,9 +8,9 @@ This package provides a Nova Tool to manage redirects with [spatie/laravel-missi
 
 ## Requirements
 
-* PHP >= 7.2
-* Laravel Nova >= 2.0
-* Laravel Framework >= 5.7
+* PHP >= 7.3
+* Laravel Nova >= 4.0
+* Laravel Framework >= 8.0
 
 ## Installation
 
