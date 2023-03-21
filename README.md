@@ -39,20 +39,6 @@ protected $middleware = [
 ],
 ```
 
-Next, register the Tool in `NovaServiceProvider` class :
-
-```php
-//app/Providers/NovaServiceProvider.php
-
-public function tools()
-{
-    return [
-        ...,
-        new LaravelNovaRedirectManager(),
-    ];
-}
-```
-
 ## Configuration
 
 This package provides a configuration file whose values overwrite the configuration of `spatie/laravel-missing-page-redirector`.
