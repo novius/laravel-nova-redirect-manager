@@ -48,11 +48,10 @@ You can publish the configuration file if you want to change these values :
 php artisan vendor:publish --provider="Novius\LaravelNovaRedirectManager\RedirectManagerServiceProvider" --tag=config
 ```
 
-You can also publish the migrations, lang and views :
+You can also publish the migrations and lang:
 ```
 php artisan vendor:publish --provider="Novius\LaravelNovaRedirectManager\RedirectManagerServiceProvider" --tag=migrations
 php artisan vendor:publish --provider="Novius\LaravelNovaRedirectManager\RedirectManagerServiceProvider" --tag=lang
-php artisan vendor:publish --provider="Novius\LaravelNovaRedirectManager\RedirectManagerServiceProvider" --tag=views
 ```
 
 ## Lint
