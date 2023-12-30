@@ -14,8 +14,6 @@ class RedirectManagerServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'laravel-nova-redirect-manager');
-
         $this->app->booted(function () {
             Nova::resources([
                config('missing-page-redirector.redirect_nova_resource'), // Load Redirect Nova resource
@@ -31,9 +29,6 @@ class RedirectManagerServiceProvider extends ServiceProvider
 
         $this->loadTranslationsFrom($packageDir.'/resources/lang', 'laravel-nova-redirect-manager');
         $this->publishes([__DIR__.'/../resources/lang' => resource_path('lang/vendor/laravel-nova-redirect-manager')], 'lang');
-
-        $this->loadViewsFrom($packageDir.'/resources/views', 'laravel-nova-redirect-manager');
-        $this->publishes([$packageDir.'/resources/views' => resource_path('views/vendor/laravel-nova-redirect-manager')], 'views');
     }
 
     /**
