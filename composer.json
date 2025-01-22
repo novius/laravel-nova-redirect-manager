@@ -16,7 +16,7 @@
     ],
     "require": {
         "php": ">=7.3.0",
-        "laravel/nova": "~4.0",
+        "laravel/nova": "~4.0|~5.0",
         "spatie/laravel-missing-page-redirector": "^2.4|^2.5"
     },
     "require-dev": {
