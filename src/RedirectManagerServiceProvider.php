@@ -16,7 +16,7 @@ class RedirectManagerServiceProvider extends ServiceProvider
     {
         $this->app->booted(function () {
             Nova::resources([
-               config('missing-page-redirector.redirect_nova_resource'), // Load Redirect Nova resource
+                config('missing-page-redirector.redirect_nova_resource'), // Load Redirect Nova resource
             ]);
         });
 
@@ -50,9 +50,6 @@ class RedirectManagerServiceProvider extends ServiceProvider
 
     /**
      * Merges the specified config from another package. Does the opposite of mergeConfigFrom().
-     *
-     * @param $path
-     * @param $key
      */
     protected function mergeConfigTo($path, $key)
     {
