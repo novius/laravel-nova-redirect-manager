@@ -2,10 +2,10 @@
 
 namespace Novius\LaravelNovaRedirectManager\Resources;
 
-use App\Nova\Resource;
 use Illuminate\Http\Request;
 use Laravel\Nova\Fields\ID;
 use Laravel\Nova\Fields\Text;
+use Laravel\Nova\Resource;
 use Novius\LaravelNovaRedirectManager\Rules\UrlAbsoluteOrRelative;
 use Novius\LaravelNovaRedirectManager\Rules\UrlRelative;
 
@@ -67,7 +67,6 @@ class Redirect extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param \Illuminate\Http\Request $request
      * @return array
      */
     public function fields(Request $request)
@@ -77,18 +76,16 @@ class Redirect extends Resource
 
             Text::make(trans('laravel-nova-redirect-manager::redirect.from'), 'from')
                 ->help(trans('laravel-nova-redirect-manager::redirect.relative_url_help'))
-                ->rules('required', 'string', 'max:'.$this->maxLengthUrl(), new UrlRelative()),
+                ->rules('required', 'string', 'max:'.$this->maxLengthUrl(), new UrlRelative),
 
             Text::make(trans('laravel-nova-redirect-manager::redirect.to'), 'to')
                 ->help(trans('laravel-nova-redirect-manager::redirect.url_help'))
-                ->rules('required', 'string', 'max:'.$this->maxLengthUrl(), new UrlAbsoluteOrRelative(), 'different:from'),
+                ->rules('required', 'string', 'max:'.$this->maxLengthUrl(), new UrlAbsoluteOrRelative, 'different:from'),
         ];
     }
 
     /**
      * Get configured max length value
-     *
-     * @return int
      */
     protected function maxLengthUrl(): int
     {

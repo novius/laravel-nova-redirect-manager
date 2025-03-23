@@ -33,7 +33,7 @@ class UrlAbsoluteOrRelative implements Rule
 
     protected function validateRelativeUrl($attribute, $value)
     {
-        if (!is_string($value)) {
+        if (! is_string($value)) {
             return false;
         }
 
