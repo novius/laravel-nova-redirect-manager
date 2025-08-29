@@ -16,7 +16,7 @@ class RedirectManagerServiceProvider extends ServiceProvider
     {
         $this->app->booted(function () {
             Nova::resources([
-                config('missing-page-redirector.redirect_nova_resource'), // Load Redirect Nova resource
+                config('laravel-nova-redirects.redirect_nova_resource'), // Load Redirect Nova resource
             ]);
         });
 
