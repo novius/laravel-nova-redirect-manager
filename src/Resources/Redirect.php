@@ -89,6 +89,6 @@ class Redirect extends Resource
      */
     protected function maxLengthUrl(): int
     {
-        return (int) config('missing-page-redirector.redirect_url_max_length', 1000);
+        return (int) config('laravel-nova-redirects.redirect_url_max_length', 1000);
     }
 }

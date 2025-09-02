@@ -24,7 +24,6 @@ class RedirectManagerServiceProvider extends ServiceProvider
 
         $this->publishes([$packageDir.'/config' => config_path()], 'config');
 
-        $this->publishes([$packageDir.'/database/migrations' => database_path('migrations')], 'migrations');
         $this->loadMigrationsFrom($packageDir.'/database/migrations');
 
         $this->loadTranslationsFrom($packageDir.'/resources/lang', 'laravel-nova-redirect-manager');
@@ -38,23 +37,9 @@ class RedirectManagerServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        if (file_exists(config_path('missing-page-redirector.php'))) {
-            $this->mergeConfigTo(config_path('missing-page-redirector.php'), 'missing-page-redirector');
-        }
-
-        $this->mergeConfigTo(
+        $this->mergeConfigFrom(
             __DIR__.'/../config/laravel-nova-redirects.php',
-            'missing-page-redirector'
+            'laravel-nova-redirects'
         );
-    }
-
-    /**
-     * Merges the specified config from another package. Does the opposite of mergeConfigFrom().
-     */
-    protected function mergeConfigTo($path, $key)
-    {
-        $config = $this->app['config']->get($key, []);
-
-        $this->app['config']->set($key, array_merge($config, require $path));
     }
 }
