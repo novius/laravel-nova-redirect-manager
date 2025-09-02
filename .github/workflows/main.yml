@@ -19,12 +19,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Cache composer dependencies
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: composer-${{ hashFiles('composer.lock') }}
-
       - name: Add Nova key
         run: composer config http-basic.nova.laravel.com $LARAVEL_NOVA_USERNAME $LARAVEL_NOVA_LICENSE_KEY
         env:
@@ -50,8 +44,10 @@ jobs:
         dependency-version: [ prefer-stable ]
         include:
           - laravel: 12.*
+            testbench: 10.*
             carbon: 3.*
           - laravel: 11.*
+            testbench: 9.*
             carbon: 2.*
         exclude:
           - laravel: 12.*
@@ -67,12 +63,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v3
 
-      - name: Cache composer dependencies
-        uses: actions/cache@v3
-        with:
-          path: vendor
-          key: composer-${{ hashFiles('composer.lock') }}
-
       - name: Add Nova key
         run: composer config http-basic.nova.laravel.com $LARAVEL_NOVA_USERNAME $LARAVEL_NOVA_LICENSE_KEY
         env:
@@ -81,7 +71,7 @@ jobs:
 
       - name: Install Dependencies
         run: |
-          composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:${{ matrix.carbon }}" "laravel/nova:${{ matrix.nova }}" --no-interaction --no-update
+          composer require "laravel/framework:${{ matrix.laravel }}" "nesbot/carbon:${{ matrix.carbon }}" "orchestra/testbench:${{ matrix.testbench }}" "laravel/nova:${{ matrix.nova }}" --no-interaction --no-update
           composer update --${{ matrix.dependency-version }} --prefer-dist --no-interaction
 
       - name: PHPStan Static Analysis
