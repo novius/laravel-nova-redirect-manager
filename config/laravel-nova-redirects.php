@@ -1,16 +1,18 @@
 <?php
 
+use Novius\LaravelNovaRedirectManager\Models\Redirect;
+
 return [
 
     /*
      * This is the model used by the database redirector
      */
-    'redirector_model' => \Novius\LaravelNovaRedirectManager\Models\Redirect::class,
+    'redirector_model' => Redirect::class,
 
     /*
      * This is the nova resource used to manage Redirect items
      */
-    'redirect_nova_resource' => \Novius\LaravelNovaRedirectManager\Resources\Redirect::class,
+    'redirect_nova_resource' => Novius\LaravelNovaRedirectManager\Resources\Redirect::class,
 
     /*
      * This max length rule for Redirect item
